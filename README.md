@@ -7,7 +7,8 @@ Git meta-data and other examples.
 
 	cd extensions
 	git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/BoilerPlate.git
-	cp -R BoilerPlate ./MyExtension
+	cp -r BoilerPlate ./MyExtension
+	rm -rf ./MyExtension/.git
 
 This automates the recommended code checkers for PHP and JavaScript code in Wikimedia projects
 (see https://www.mediawiki.org/wiki/Continuous_integration/Entry_points).
