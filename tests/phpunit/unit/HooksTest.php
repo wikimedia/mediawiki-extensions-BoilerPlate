@@ -33,7 +33,7 @@ class HooksTest extends \MediaWikiUnitTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		Hooks::onBeforePageDisplay( $outputPageMock, $skinMock );
+		( new Hooks )->onBeforePageDisplay( $outputPageMock, $skinMock );
 	}
 
 	/**
@@ -55,7 +55,7 @@ class HooksTest extends \MediaWikiUnitTestCase {
 		$skinMock = $this->getMockBuilder( \Skin::class )
 			->disableOriginalConstructor()
 			->getMock();
-		Hooks::onBeforePageDisplay( $outputPageMock, $skinMock );
+		( new Hooks )->onBeforePageDisplay( $outputPageMock, $skinMock );
 	}
 
 }

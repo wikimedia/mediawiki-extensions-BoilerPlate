@@ -19,14 +19,14 @@
 
 namespace MediaWiki\Extension\BoilerPlate;
 
-class Hooks {
+class Hooks implements \MediaWiki\Hook\BeforePageDisplayHook {
 
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
 	 * @param \OutputPage $out
 	 * @param \Skin $skin
 	 */
-	public static function onBeforePageDisplay( \OutputPage $out, \Skin $skin ) {
+	public function onBeforePageDisplay( $out, $skin ) {
 		$config = $out->getConfig();
 		if ( $config->get( 'BoilerPlateVandalizeEachPage' ) ) {
 			$out->addHTML( '<p>BoilerPlate was here</p>' );

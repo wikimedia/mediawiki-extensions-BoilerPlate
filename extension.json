@@ -23,8 +23,13 @@
 			"value": false
 		}
 	},
+	"HookHandlers": {
+		"BoilerPlateHooks": {
+			"class": "MediaWiki\\Extension\\BoilerPlate\\Hooks"
+		}
+	},
 	"Hooks": {
-		"BeforePageDisplay": "MediaWiki\\Extension\\BoilerPlate\\Hooks::onBeforePageDisplay"
+		"BeforePageDisplay": "BoilerPlateHooks"
 	},
 	"MessagesDirs": {
 		"BoilerPlate": [
