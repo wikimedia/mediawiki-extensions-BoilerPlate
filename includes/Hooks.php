@@ -29,7 +29,7 @@ class Hooks implements \MediaWiki\Hook\BeforePageDisplayHook {
 	public function onBeforePageDisplay( $out, $skin ) : void {
 		$config = $out->getConfig();
 		if ( $config->get( 'BoilerPlateVandalizeEachPage' ) ) {
-			$out->addHTML( '<p>BoilerPlate was here</p>' );
+			$out->addHTML( \Html::element( 'p', [], 'BoilerPlate was here' ) );
 			$out->addModules( 'oojs-ui-core' );
 		}
 	}
