@@ -26,7 +26,7 @@ class Hooks implements \MediaWiki\Hook\BeforePageDisplayHook {
 	 * @param \OutputPage $out
 	 * @param \Skin $skin
 	 */
-	public function onBeforePageDisplay( $out, $skin ) : void {
+	public function onBeforePageDisplay( $out, $skin ): void {
 		$config = $out->getConfig();
 		if ( $config->get( 'BoilerPlateVandalizeEachPage' ) ) {
 			$out->addHTML( \Html::element( 'p', [], 'BoilerPlate was here' ) );
