@@ -11,7 +11,7 @@
 		"MediaWiki": ">= 1.35.0"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\BoilerPlate\\": "includes/"
+		"MediaWiki\\Extension\\BoilerPlate\\": "src/"
 	},
 	"config": {
 		"BoilerPlateEnableFoo": {
@@ -36,16 +36,16 @@
 			"i18n"
 		]
 	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "resources",
-		"remoteExtPath": "BoilerPlate/resources"
-	},
 	"ResourceModules": {
 		"ext.boilerPlate": {
+			"localBasePath": "resources/ext.boilerPlate",
+			"remoteExtPath": "BoilerPlate/resources/ext.boilerPlate",
 			"dependencies": [],
-			"messages": [],
 			"styles": [],
-			"scripts": []
+			"packageFiles": [
+				"init.js"
+			],
+			"messages": []
 		}
 	},
 	"manifest_version": 2

@@ -1,10 +1,6 @@
-( function () {
-
-	/**
-	 * @class mw.boilerPlate
-	 * @singleton
-	 */
-	mw.boilerPlate = {
-	};
-
-}() );
+/**
+ * @class mw.boilerPlate
+ * @singleton
+ */
+mw.boilerPlate = {
+};
