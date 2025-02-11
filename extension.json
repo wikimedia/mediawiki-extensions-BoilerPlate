@@ -3,7 +3,7 @@
 	"author": [
 		"Your Name"
 	],
-	"url": "https://www.mediawiki.org/wiki/Extension:BoilerPlate",
+	"url": "https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BoilerPlate",
 	"descriptionmsg": "boilerplate-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
