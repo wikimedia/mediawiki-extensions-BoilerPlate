@@ -2,21 +2,21 @@
 
 namespace MediaWiki\Extension\BoilerPlate\Tests;
 
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Extension\BoilerPlate\Hooks;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Skin\Skin;
+use MediaWikiUnitTestCase;
 
 /**
- * @coversDefaultClass \MediaWiki\Extension\BoilerPlate\Hooks
+ * @covers \MediaWiki\Extension\BoilerPlate\Hooks
  */
-class HooksTest extends \MediaWikiUnitTestCase {
-
-	/**
-	 * @covers ::onBeforePageDisplay
-	 */
+class HooksTest extends MediaWikiUnitTestCase {
 	public function testOnBeforePageDisplayVandalizeIsTrue() {
-		$config = new \HashConfig( [
+		$config = new HashConfig( [
 			'BoilerPlateVandalizeEachPage' => true
 		] );
-		$outputPageMock = $this->getMockBuilder( \OutputPage::class )
+		$outputPageMock = $this->getMockBuilder( OutputPage::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$outputPageMock->method( 'getConfig' )
@@ -29,21 +29,18 @@ class HooksTest extends \MediaWikiUnitTestCase {
 			->method( 'addModules' )
 			->with( 'oojs-ui-core' );
 
-		$skinMock = $this->getMockBuilder( \Skin::class )
+		$skinMock = $this->getMockBuilder( Skin::class )
 			->disableOriginalConstructor()
 			->getMock();
 
 		( new Hooks )->onBeforePageDisplay( $outputPageMock, $skinMock );
 	}
 
-	/**
-	 * @covers ::onBeforePageDisplay
-	 */
 	public function testOnBeforePageDisplayVandalizeFalse() {
-		$config = new \HashConfig( [
+		$config = new HashConfig( [
 			'BoilerPlateVandalizeEachPage' => false
 		] );
-		$outputPageMock = $this->getMockBuilder( \OutputPage::class )
+		$outputPageMock = $this->getMockBuilder( OutputPage::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$outputPageMock->method( 'getConfig' )
